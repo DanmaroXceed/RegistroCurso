@@ -19,7 +19,14 @@
             font-size: 22pt;
             font-weight: bold;
             color: #2d3748;
-            /* gris oscuro */
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 20pt;
+            font-weight: bold;
+            color: #313c4e;
             margin-bottom: 20px;
         }
 
@@ -47,37 +54,46 @@
 
         .photos {
             margin-top: 40px;
+            text-align: center;
         }
 
         .photos-title {
             font-size: 14pt;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             color: #2c5282;
         }
 
         .photo-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
+            justify-content: center;
         }
 
-        .photo-grid div {
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
             text-align: center;
-            width: 30%;
         }
 
-        .photo-grid img {
+        .photo-item img {
+            display: block;
+            margin: 0 auto;
             max-width: 100%;
             height: auto;
-            border: 2px solid #cbd5e0;
-            border-radius: 8px;
+            border: 3px solid #cbd5e0;
+            border-radius: 10px;
         }
 
         .photo-caption {
-            margin-top: 5px;
-            font-size: 10pt;
+            margin-top: 10px;
+            font-size: 11pt;
             color: #555;
+            font-weight: bold;
         }
 
         .footer {
@@ -91,6 +107,7 @@
 <body>
 
     <div class="title">Constancia de Registro</div>
+    <div class="subtitle">Curso en Materia de Violencia de Género</div>
 
     <p>Se hace constar que la persona con los siguientes datos ha completado su registro:</p>
 
@@ -146,25 +163,28 @@
         <div class="photos-title">Documentos Adjuntos</div>
         <div class="photo-grid">
             @if ($registro->ine)
-                <div>
-                    <img src="{{ public_path('storage/' . $registro->ine) }}" alt="Foto INE">
+                <div class="photo-item">
                     <div class="photo-caption">INE</div>
+                    <img src="{{ public_path('storage/' . $registro->ine) }}" alt="Foto INE">
                 </div>
             @endif
+
             @if ($registro->curp)
-                <div>
-                    <img src="{{ public_path('storage/' . $registro->curp) }}" alt="Foto CURP">
+                <div class="photo-item">
                     <div class="photo-caption">CURP</div>
+                    <img src="{{ public_path('storage/' . $registro->curp) }}" alt="Foto CURP">
                 </div>
             @endif
+
             @if ($registro->f_pasap)
-                <div>
-                    <img src="{{ public_path('storage/' . $registro->f_pasap) }}" alt="Foto Pasaporte">
+                <div class="photo-item">
                     <div class="photo-caption">Pasaporte</div>
+                    <img src="{{ public_path('storage/' . $registro->f_pasap) }}" alt="Foto Pasaporte">
                 </div>
             @endif
         </div>
     </div>
+
 
     <div class="footer">
         Fecha de emisión: {{ \Carbon\Carbon::now()->format('d/m/Y H:i') }}
