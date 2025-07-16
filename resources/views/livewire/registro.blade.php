@@ -251,10 +251,6 @@
                 <div x-show="fileName_pasap" class="mt-2 text-sm text-gray-600">
                     Archivo: <span x-text="fileName_pasap"></span>
                 </div>
-
-                @error('f_pasap')
-                    <span class="text-red-600 text-sm">{{ $message }}</span>
-                @enderror
             </div>
 
             <!-- Datos de Contacto -->
