@@ -267,6 +267,10 @@
                 <div wire:loading wire:target="f_pasap" class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
                     <div wire:loading.class="bg-gray-600 text-center text-white" style="border-radius: 10px" wire:target="f_pasap">Subiendo...</div>
                 </div>
+
+                @error('f_pasap')
+                    <span class="text-red-600 text-sm">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Datos de Contacto -->

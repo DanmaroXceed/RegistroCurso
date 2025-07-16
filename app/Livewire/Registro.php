@@ -31,24 +31,28 @@ class Registro extends Component
     public $ext;
     public $cel;
 
-    protected $rules = [
-        'email' => ['required', 'email', 'unique:registros,email'],
-        'a_pat'       => 'required|string|max:255',
-        'a_mat'       => 'required|string|max:255',
-        'nombre'      => 'required|string|max:255',
-        'inst'        => 'required|string|max:255',
-        'cargo'       => 'required|string|max:255',
-        'e_fed'       => 'required|string|max:255',
-        'c_elec'     => ['required', 'string', 'regex:/[BCDFGHJKLMNPQRSTVWXYZ]{6}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[0-3]{1}[0-9]{1}[HM]{1}[0-9]{3}/'],
-        'ine'         => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
-        'pasap'       => 'nullable|string|max:255',
-        'c_curp'     => ['required', 'string', 'regex:/^[A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d]\d$/'],
-        'curp'        => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
-        'email_comp'  => 'required|email|max:255',
-        'tel'         => 'required|string|max:20',
-        'ext'         => 'required|string|max:10',
-        'cel'         => 'required|string|max:20',
-    ];
+    protected function rules()
+    {
+        return [
+            'email'         => ['required', 'email', 'unique:registros,email'],
+            'a_pat'         => 'required|string|max:255',
+            'a_mat'         => 'required|string|max:255',
+            'nombre'        => 'required|string|max:255',
+            'inst'          => 'required|string|max:255',
+            'cargo'         => 'required|string|max:255',
+            'e_fed'         => 'required|string|max:255',
+            'c_elec'        => ['required', 'string', 'regex:/[BCDFGHJKLMNPQRSTVWXYZ]{6}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[0-3]{1}[0-9]{1}[HM]{1}[0-9]{3}/'],
+            'ine'           => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'pasap'         => ['nullable', 'string'],
+            'f_pasap'       => $this->pasap ? 'required|image|mimes:jpeg,png,pdf|max:2048' : 'nullable|image|mimes:jpeg,png,pdf|max:2048',
+            'c_curp'        => ['required', 'string', 'regex:/^[A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|BC|BS|CC|CL|CM|CS|CH|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d]\d$/'],
+            'curp'          => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'email_comp'    => 'required|email|max:255',
+            'tel'           => 'required|string|max:20',
+            'ext'           => 'required|string|max:10',
+            'cel'           => 'required|string|max:20',
+        ];
+    }
 
     protected $messages = [
         'email.required'      => 'El correo es obligatorio.',
@@ -102,6 +106,8 @@ class Registro extends Component
 
         'cel.required'        => 'El número de celular es obligatorio.',
         'cel.string'          => 'El número de celular debe ser texto.',
+
+        'f_pasap.required' => 'Debe adjuntar la imagen del pasaporte si ha llenado el campo Pasaporte.',
     ];
 
     public function register()
@@ -114,7 +120,7 @@ class Registro extends Component
             // Guarda archivos
             $inePath = $this->ine->store('documentos/ine', 'public');
             $curpPath = $this->curp->store('documentos/curp', 'public');
-            $pasapPath = $this->f_pasap ? $this->f_pasap->store('documentos/pasap', 'public') : ''; 
+            $pasapPath = $this->f_pasap ? $this->f_pasap->store('documentos/pasap', 'public') : '';
 
 
             // Crea registro
