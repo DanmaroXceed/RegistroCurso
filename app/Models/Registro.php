@@ -17,6 +17,7 @@ class Registro extends Model
         'c_elec',
         'ine',
         'pasap',
+        'f_pasap',
         'c_curp',
         'curp',
         'email_comp',

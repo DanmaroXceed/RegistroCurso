@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('c_elec');    // Clave elector
             $table->string('ine');       // INE
             $table->string('pasap')->nullable();     // Pasaporte
+            $table->string('f_pasap')->nullable();     // Pasaporte
             $table->string('c_curp');    // Clave CURP
             $table->string('curp');      // CURP
             $table->string('email_comp'); // Correo complementario

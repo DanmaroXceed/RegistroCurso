@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro al curso</title>
+    <title>Registro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="{{ asset('FiscaliaLogo.jpeg') }}" type="image/x-icon" />
     @livewireStyles
@@ -10,7 +10,7 @@
 <body class="bg-gray-100">
     <!-- Header, navbar, lo que quieras -->
 
-    <main class="py-8">
+    <main>
         <livewire:registro />
     </main>
 
