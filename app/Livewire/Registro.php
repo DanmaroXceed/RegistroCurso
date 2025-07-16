@@ -114,7 +114,7 @@ class Registro extends Component
             // Guarda archivos
             $inePath = $this->ine->store('documentos/ine', 'public');
             $curpPath = $this->curp->store('documentos/curp', 'public');
-            $pasapPath = $this->curp->store('documentos/pasap', 'public');
+            $pasapPath = $this->f_pasap->store('documentos/pasap', 'public');
 
             // Crea registro
             $registro = Reg::create([
