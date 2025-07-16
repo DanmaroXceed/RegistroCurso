@@ -16,7 +16,7 @@ class RegistroController extends Controller
     public function generatePDF(Registro $user)
     {
         $pdf = Pdf::loadView('registro.pdf', compact('user'));
-        return $pdf->stream('registro_'.$user->id.'.pdf');
+        return $pdf->stream('registro_' . $user->id . '.pdf');
     }
 
     public function verPDF(Int $id)
@@ -24,4 +24,19 @@ class RegistroController extends Controller
         $registro = Registro::find($id);
         return view('registro.pdf', compact('registro'));
     }
+
+    public function reporte()
+    {
+        $datos = Registro::all();
+        return view('reporte', compact('datos'));
+    }
+
+    // public function exportarPDF()
+    // {
+    //     $datos = Registro::all(); 
+    //     $pdf = Pdf::loadView('reporte', compact('datos'))
+    //         ->setPaper('a4', 'landscape');
+
+    //     return $pdf->download('reporte_registros.pdf');
+    // }
 }

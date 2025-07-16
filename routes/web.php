@@ -14,3 +14,6 @@ Route::get('/registro/completado/{user}/pdf', [RegistroController::class, 'gener
      ->name('registro.pdf');
 
 Route::get('/pdf/{id}', [RegistroController::class, 'verPDF']);
+
+Route::get('/reporte', [RegistroController::class, 'reporte'])->name('reporte');
+Route::get('/exportar-pdf', [RegistroController::class, 'exportarPDF'])->name('exportar.pdf');
