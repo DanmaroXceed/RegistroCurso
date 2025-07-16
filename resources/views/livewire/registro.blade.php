@@ -1,11 +1,14 @@
 <div
     class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-white py-12 px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-4xl">
+        <div style="display: flex; justify-content: center;">
+            <img src="{{ asset('FiscaliaLogo.jpeg') }}" alt="Logo FGJEZ" style="width: 15%; height: auto; margin-top: -40px">
+        </div>
         <h2 class="text-3xl font-extrabold text-center text-indigo-700 mb-10">
             Registro al Curso en Materia de Violencia de Género
         </h2>
 
-        <form wire:submit.prevent="register" class="space-y-2 md:grid md:grid-cols-2 md:gap-6" > <!--method="POST"-->
+        <form wire:submit.prevent="register" class="space-y-2 md:grid md:grid-cols-2 md:gap-6"> <!--method="POST"-->
 
             <!-- Datos Personales -->
             <div class="col-span-2">

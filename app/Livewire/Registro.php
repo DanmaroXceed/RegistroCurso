@@ -23,7 +23,7 @@ class Registro extends Component
     public $c_elec;
     public $ine; // archivo
     public $pasap; // opcional
-    public $f_pasap = ''; // opcional
+    public $f_pasap; // opcional
     public $c_curp; // texto
     public $curp; // archivo
     public $email_comp;
@@ -114,9 +114,8 @@ class Registro extends Component
             // Guarda archivos
             $inePath = $this->ine->store('documentos/ine', 'public');
             $curpPath = $this->curp->store('documentos/curp', 'public');
-            if ($this->f_pasap) {
-		$pasapPath = $this->f_pasap->store('documentos/pasap', 'public');
-	    }
+            $pasapPath = $this->f_pasap ? $this->f_pasap->store('documentos/pasap', 'public') : ''; 
+
 
             // Crea registro
             $registro = Reg::create([
