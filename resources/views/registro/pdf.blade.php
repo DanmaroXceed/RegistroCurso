@@ -146,6 +146,10 @@
             <td>{{ $registro->c_curp }}</td>
         </tr>
         <tr>
+            <td>Pasaporte:</td>
+            <td>{{ $registro->pasap ?? 'Sin dato'}}</td>
+        </tr>
+        <tr>
             <td>Correo Complementario:</td>
             <td>{{ $registro->email_comp }}</td>
         </tr>
