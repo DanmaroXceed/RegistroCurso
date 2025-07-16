@@ -31,12 +31,13 @@ class RegistroController extends Controller
         return view('reporte', compact('datos'));
     }
 
-    // public function exportarPDF()
-    // {
-    //     $datos = Registro::all(); 
-    //     $pdf = Pdf::loadView('reporte', compact('datos'))
-    //         ->setPaper('a4', 'landscape');
+    public function exportarPDF()
+    {
+        $datos = Registro::all(); // O tu query filtrada
 
-    //     return $pdf->download('reporte_registros.pdf');
-    // }
+        $pdf = Pdf::loadView('pdf.reporte', compact('datos'))
+            ->setPaper('legal', 'landscape'); // Si tu tabla es ancha
+
+        return $pdf->download('reporte_registros.pdf');
+    }
 }

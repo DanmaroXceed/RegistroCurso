@@ -116,11 +116,11 @@
         </table>
     </div>
 
-    {{-- <div class="flex justify-center mt-6">
+    <div class="flex justify-center mt-6">
         <a href="{{ route('exportar.pdf') }}" class="btn btn-primary">
             Descargar Tabla en PDF
         </a>
-    </div> --}}
+    </div>
 
 </body>
 
