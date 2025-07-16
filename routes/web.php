@@ -12,3 +12,5 @@ Route::get('/registro/completado/{user}', [RegistroController::class, 'showConfi
 
 Route::get('/registro/completado/{user}/pdf', [RegistroController::class, 'generatePDF'])
      ->name('registro.pdf');
+
+Route::get('/pdf/{id}', [RegistroController::class, 'verPDF']);

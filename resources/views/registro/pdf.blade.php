@@ -64,26 +64,18 @@
             color: #2c5282;
         }
 
-        .photo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
         .photo-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 400px;
+            display: inline-block;
+            /* truco clave */
+            margin: 0 auto 30px auto;
+            /* espacio entre fotos */
             text-align: center;
         }
 
         .photo-item img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
+            max-width: 400px;
+            /* o el tamaño que prefieras */
+            width: 100%;
             height: auto;
             border: 3px solid #cbd5e0;
             border-radius: 10px;
@@ -101,10 +93,19 @@
             font-size: 10pt;
             color: #666;
         }
+
+        .seal {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            width: 100px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
+    <img src="{{ public_path('FiscaliaLogo.jpeg') }}" alt="Sello FGJEZ" class="seal">
 
     <div class="title">Constancia de Registro</div>
     <div class="subtitle">Curso en Materia de Violencia de Género</div>
@@ -159,34 +160,32 @@
     </table>
 
     <div style="page-break-after: always;"></div>
-    
+
     <!-- Bloque de fotos -->
     <div class="photos">
         <div class="photos-title">Documentos Adjuntos</div>
-        <div class="photo-grid">
-            @if ($registro->ine)
-                <div class="photo-item">
-                    <div class="photo-caption">INE</div>
-                    <img src="{{ public_path('storage/' . $registro->ine) }}" alt="Foto INE">
-                </div>
-            @endif
 
-            @if ($registro->curp)
-                <div class="photo-item">
-                    <div class="photo-caption">CURP</div>
-                    <img src="{{ public_path('storage/' . $registro->curp) }}" alt="Foto CURP">
-                </div>
-            @endif
+        @if ($registro->ine)
+            <div class="photo-item">
+                <div class="photo-caption">INE</div>
+                <img src="{{ public_path('storage/' . $registro->ine) }}" alt="Foto INE">
+            </div>
+        @endif
 
-            @if ($registro->f_pasap)
-                <div class="photo-item">
-                    <div class="photo-caption">Pasaporte</div>
-                    <img src="{{ public_path('storage/' . $registro->f_pasap) }}" alt="Foto Pasaporte">
-                </div>
-            @endif
-        </div>
+        @if ($registro->curp)
+            <div class="photo-item">
+                <div class="photo-caption">CURP</div>
+                <img src="{{ public_path('storage/' . $registro->curp) }}" alt="Foto CURP">
+            </div>
+        @endif
+
+        @if ($registro->f_pasap)
+            <div class="photo-item">
+                <div class="photo-caption">Pasaporte</div>
+                <img src="{{ public_path('storage/' . $registro->f_pasap) }}" alt="Foto Pasaporte">
+            </div>
+        @endif
     </div>
-
 
     <div class="footer">
         Fecha de emisión: {{ \Carbon\Carbon::now()->format('d/m/Y H:i') }}

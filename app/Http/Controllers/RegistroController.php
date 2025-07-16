@@ -18,4 +18,10 @@ class RegistroController extends Controller
         $pdf = Pdf::loadView('registro.pdf', compact('user'));
         return $pdf->stream('registro_'.$user->id.'.pdf');
     }
+
+    public function verPDF(Int $id)
+    {
+        $registro = Registro::find($id);
+        return view('registro.pdf', compact('registro'));
+    }
 }

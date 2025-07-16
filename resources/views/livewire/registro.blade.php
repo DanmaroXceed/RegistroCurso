@@ -2,7 +2,8 @@
     class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-white py-12 px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-2xl shadow-2xl p-10 w-full max-w-4xl">
         <div style="display: flex; justify-content: center;">
-            <img src="{{ asset('FiscaliaLogo.jpeg') }}" alt="Logo FGJEZ" style="width: 15%; height: auto; margin-top: -40px">
+            <img src="{{ asset('FiscaliaLogo.jpeg') }}" alt="Logo FGJEZ"
+                style="width: 30%; height: auto; margin-top: -40px">
         </div>
         <h2 class="text-3xl font-extrabold text-center text-indigo-700 mb-10">
             Registro al Curso en Materia de Violencia de Género
@@ -184,6 +185,10 @@
                 @error('ine')
                     <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
+
+                <div wire:loading wire:target="ine" class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                    <div wire:loading.class="bg-gray-600 text-center text-white" style="border-radius: 10px" wire:target="ine">Subiendo...</div>
+                </div>
             </div>
 
             <div>
@@ -221,6 +226,10 @@
                 @error('curp')
                     <span class="text-red-600 text-sm">{{ $message }}</span>
                 @enderror
+
+                <div wire:loading wire:target="curp" class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                    <div wire:loading.class="bg-gray-600 text-center text-white" style="border-radius: 10px" wire:target="curp">Subiendo...</div>
+                </div>
             </div>
 
             <div>
@@ -253,6 +262,10 @@
 
                 <div x-show="fileName_pasap" class="mt-2 text-sm text-gray-600">
                     Archivo: <span x-text="fileName_pasap"></span>
+                </div>
+
+                <div wire:loading wire:target="f_pasap" class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                    <div wire:loading.class="bg-gray-600 text-center text-white" style="border-radius: 10px" wire:target="f_pasap">Subiendo...</div>
                 </div>
             </div>
 
