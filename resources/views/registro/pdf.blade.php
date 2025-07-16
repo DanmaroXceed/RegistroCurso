@@ -158,6 +158,8 @@
         </tr>
     </table>
 
+    <div style="page-break-after: always;"></div>
+    
     <!-- Bloque de fotos -->
     <div class="photos">
         <div class="photos-title">Documentos Adjuntos</div>
