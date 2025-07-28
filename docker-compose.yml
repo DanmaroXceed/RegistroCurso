@@ -21,7 +21,7 @@ services:
         container_name: server-RegCurso
         restart: unless-stopped
         ports:
-            - "3020:80"
+            - "9005:80"
         volumes:
             - ./:/var/www/
             - ./nginx/conf.d/:/etc/nginx/conf.d/
@@ -35,7 +35,7 @@ services:
         container_name: db-RegCurso
         restart: unless-stopped
         ports:
-            - "3306:3306"
+            - "3307:3306"
         environment:
             MYSQL_DATABASE: regcurso
             MYSQL_ROOT_PASSWORD: 94NomaS1V5eA

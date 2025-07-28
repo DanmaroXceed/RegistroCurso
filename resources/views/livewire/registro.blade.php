@@ -162,7 +162,7 @@
 
             <div x-data="{ fileName_ine: '' }">
                 <label for="ine" class="block text-sm font-medium text-gray-700 mb-1">
-                    Foto de pasaporte
+                    Foto de INE
                 </label>
 
                 <label for="ine"
@@ -203,7 +203,7 @@
 
             <div x-data="{ fileName_curp: '' }">
                 <label for="curp" class="block text-sm font-medium text-gray-700 mb-1">
-                    Foto de pasaporte
+                    Foto de CURP
                 </label>
 
                 <label for="curp"
@@ -244,7 +244,7 @@
 
             <div x-data="{ fileName_pasap: '' }">
                 <label for="f_pasap" class="block text-sm font-medium text-gray-700 mb-1">
-                    Foto de pasaporte
+                    Foto de Pasaporte
                 </label>
 
                 <label for="f_pasap"
