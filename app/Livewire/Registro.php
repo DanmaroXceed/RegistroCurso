@@ -41,7 +41,7 @@ class Registro extends Component
             'inst'          => 'required|string|max:255',
             'cargo'         => 'required|string|max:255',
             'e_fed'         => 'required|string|max:255',
-            'c_elec'        => ['required', 'string', 'regex:/[BCDFGHJKLMNPQRSTVWXYZ]{6}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[0-3]{1}[0-9]{1}[HM]{1}[0-9]{3}/'],
+            'c_elec'        => ['required', 'string', 'regex:/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]{6}[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}[0-3]{1}[0-9]{1}[HM]{1}[0-9]{3}/'],
             'ine'           => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
             'pasap'         => ['nullable', 'string'],
             'f_pasap'       => $this->pasap ? 'required|image|mimes:jpeg,png,pdf|max:2048' : 'nullable|image|mimes:jpeg,png,pdf|max:2048',
