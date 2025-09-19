@@ -117,8 +117,12 @@
     </div>
 
     <div class="flex justify-center mt-6">
-        <a href="{{ route('exportar.pdf') }}" class="btn btn-primary">
+        <a href="{{ route('exportar.pdf') }}" class="btn btn-primary mx-3">
             Descargar Tabla en PDF
+        </a>
+
+        <a href="{{ route('exportar.excel') }}" class="btn btn-success mx-3">
+            Descargar Tabla en Excel
         </a>
     </div>
 

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\RegistrosExport;
 use Illuminate\Http\Request;
 use App\Models\Registro;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
 
 class RegistroController extends Controller
 {
@@ -39,5 +41,9 @@ class RegistroController extends Controller
             ->setPaper('legal', 'landscape'); // Si tu tabla es ancha
 
         return $pdf->download('reporte_registros.pdf');
+    }
+
+    public function exportarExcel(){
+        return Excel::download(new RegistrosExport, 'registros_curso.xlsx');
     }
 }
