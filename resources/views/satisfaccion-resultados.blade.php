@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Resumen de Resultados</title>
+    <link rel="icon" href="{{ asset('FiscaliaLogo.jpeg') }}" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -72,9 +73,9 @@
                 <div class="card p-3 shadow-sm">
                     <h5>2. ¿Cree que la duración del curso fue lo suficientemente adecuada para satisfacer sus
                         expectativas de formación?</h5>
-                        <div class="chart-container">
-                            <canvas id="p2Chart"></canvas>
-                        </div>
+                    <div class="chart-container">
+                        <canvas id="p2Chart"></canvas>
+                    </div>
                 </div>
             </div>
 
@@ -91,8 +92,8 @@
                 <div class="card p-3 shadow-sm">
                     <h5>6. ¿La formación impartida le ha resultado útil para el desarrollo de su trabajo diario?</h5>
                     <div class="chart-container">
-                            <canvas id="p6Chart"></canvas>
-                        </div>
+                        <canvas id="p6Chart"></canvas>
+                    </div>
                 </div>
             </div>
 

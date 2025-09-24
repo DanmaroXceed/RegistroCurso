@@ -33,6 +33,11 @@
       Si completaste tu registro, te recomendamos estar atento a tu correo electrónico o a los canales oficiales para futuras notificaciones.
     </p>
 
+    <p class="mb-8 text-base text-gray-600">
+      Por favor contesta el siguiente <a href="/formulario" style="color: blue">formulario de satisfacción</a> referente al curso.
+
+    </p>
+
     <p class="mt-6 text-sm text-gray-500">
       Para más información, por favor contacta al área correspondiente o visita nuestro sitio oficial.
     </p>
