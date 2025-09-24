@@ -22,3 +22,7 @@ Route::get('/pdf/{id}', [RegistroController::class, 'verPDF']);
 Route::get('/reporte', [RegistroController::class, 'reporte'])->name('reporte');
 Route::get('/exportar-pdf', [RegistroController::class, 'exportarPDF'])->name('exportar.pdf');
 Route::get('/exportar-excel', [RegistroController::class, 'exportarExcel'])->name('exportar.excel');
+
+Route::get('/formulario', [RegistroController::class, 'formularioSatisfaccion'])->name('formSatis');
+Route::post('/formulario', [RegistroController::class, 'guardarForm'])->name('formulario.guardar');
+Route::get('/reporte-satisfaccion', [RegistroController::class, 'reporteSatisfaccion'])->name('repoSatis');
