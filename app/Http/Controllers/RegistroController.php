@@ -117,7 +117,7 @@ class RegistroController extends Controller
 
         // Para p4 (Sí, No, No en todos los casos)
         $p4_counts = [
-            'Si' => $respuestas->where('p4', 'Si')->count(),
+            'Si' => $respuestas->where('p4', 'Sí')->count(),
             'No' => $respuestas->where('p4', 'No')->count(),
             'No en todos los casos' => $respuestas->where('p4', 'No en todos los casos')->count(),
         ];

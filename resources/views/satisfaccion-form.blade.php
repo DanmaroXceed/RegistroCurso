@@ -21,10 +21,24 @@
         .hidden {
             display: none;
         }
+
+        .logo-card {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+            max-height: 100px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+    <img class="logo-card" src="{{ asset('logoazul.png') }}" alt="Logo Fiscalía">
 
     <div class="container">
         <div class="text-center pb-4">
@@ -60,7 +74,8 @@
 
                 <!-- Pregunta 2 -->
                 <div class="step hidden">
-                    <h5>2. ¿Cree que la duración del curso fue lo suficientemente adecuada para satisfacer sus expectativas de formación?</h5>
+                    <h5>2. ¿Cree que la duración del curso fue lo suficientemente adecuada para satisfacer sus
+                        expectativas de formación?</h5>
                     <div>
                         <input type="radio" class="btn-check" name="p2" value="Si" id="p2si">
                         <label class="btn btn-outline-success me-2" for="p2si">Sí</label>
@@ -183,8 +198,6 @@
                 submitBtn.classList.remove("hidden");
             }
         });
-
-        
     </script>
 </body>
 
