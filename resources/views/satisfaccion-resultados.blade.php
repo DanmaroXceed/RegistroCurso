@@ -51,10 +51,20 @@
             width: 100% !important;
             height: 100% !important;
         }
+
+        .logo-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.295);
+            max-height: 100px;
+            height: auto;
+        }
     </style>
 </head>
 
 <body class="bg-light p-4">
+
+    <img class="logo-card d-block mx-auto mb-4" src="{{ asset('logoazul.png') }}" alt="Logo Fiscalía">
 
     <div class="container">
         <h2 class="text-center mb-4">Resumen de Resultados</h2>
